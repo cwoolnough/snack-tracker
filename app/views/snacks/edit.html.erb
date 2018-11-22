@@ -1,0 +1,7 @@
+<h1>Edit this Snack</h1>
+
+<%= render 'form' %>
+
+<%= form_tag @snack, method: "DELETE" do %>
+    <%= submit_tag "Delete this snack" %>
+<% end %>

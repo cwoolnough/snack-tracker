@@ -1,0 +1,9 @@
+<h1>Welcome to the snack app</h1>
+<hr>
+
+<h3>Please find the list of all snacks here:</h3><br>
+<ul>
+<% @snacks.each do |snack| %>
+    <li>Snack Name: <%= link_to snack.name, snack %></li>
+<% end %>
+</ul>
