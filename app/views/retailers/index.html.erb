@@ -1,0 +1,12 @@
+<h1>Retailers Home Page</h1>
+
+<hr>
+
+<ul>
+    <% @retailers.each do |retailer| %>
+    <li>Retailer Name: <%= link_to retailer.name, retailer_path(retailer) %></li>
+<% end %>
+</ul>
+
+
+

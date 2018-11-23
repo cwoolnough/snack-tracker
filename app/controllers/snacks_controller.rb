@@ -11,10 +11,11 @@ class SnacksController < ApplicationController
 
   def new
     @snack = Snack.new
+    @retailers = Retailer.all
   end
 
   def create 
-    snack = Snack.create(snack_params)
+    @snack = Snack.create(snack_params)
       redirect_to snack_path(@snack)
   end 
 
@@ -35,7 +36,7 @@ class SnacksController < ApplicationController
   private
 
   def snack_params
-    params.require(:snack).permit(:name, :calories, :deliciousness)
+    params.require(:snack).permit(:name, :calories, :deliciousness, :retailer_id)
   end
 
   def find_snack

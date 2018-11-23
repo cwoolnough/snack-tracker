@@ -5,5 +5,8 @@
     <%= f.number_field :calories %>
     <%= f.label :deliciousness %>
     <%= f.select :deliciousness, (1..10) %>
+    <%= f.collection_select :retailer_id, @retailers, :id, :name, prompt: "Select a Retailer" %>
+
     <%= f.submit "Snackify" %>
 <% end %>
+
