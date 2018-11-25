@@ -7,6 +7,16 @@ body {
     background: lightblue; 
 }
 
-.new_snack {
-    padding: 10px;
+.new_snack a {
+    color: red;
+}
+
+.field_with_errors {
+    display: inline;
+    color: red;
+}
+
+ul.error_list li {
+    color: red;
+    font-size: 10px; 
 }

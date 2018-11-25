@@ -15,7 +15,11 @@ class RetailersController < ApplicationController
 
   def create
     @retailer = Retailer.create(retailer_params)
-    redirect_to retailer_path(@retailer)
+    if @retailer.errors.any?
+      render :new
+    else
+      redirect_to retailer_path(@retailer)
+    end
   end
 
 
