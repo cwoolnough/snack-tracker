@@ -16,19 +16,26 @@ class SnacksController < ApplicationController
 
   def create 
     @snack = Snack.create(snack_params)
-    if @snack.errors.any?
-      render :new
-    else
+    if @snack.valid?
       redirect_to snack_path(@snack)
+    else
+      flash[:errors] = @snack.errors.full_messages
+      redirect_to new_snack_path
     end 
   end 
 
   def edit
+    @retailers = Retailer.all
   end
 
   def update
     @snack.update(snack_params)
+    if @snack.valid?
       redirect_to snack_path(@snack)
+    else
+      flash[:errors] = @snack.errors.full_messages
+      redirect_to edit_snack_path(@snack)
+    end
   end
 
   def destroy

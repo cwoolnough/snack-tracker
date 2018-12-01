@@ -5,5 +5,6 @@
 <p>Snack Calories: <%= @snack.calories %></p>
 <p>Snack Deliciousness: <%= @snack.deliciousness %></p>
 
-<p>Link back to Retailer: <%= link_to @snack.retailer.name, retailer_path(@snack.retailer) %></p>
+<p>Link back to Retailer: <%= link_to @snack.retailer.name, retailer_path(@snack.retailer)%></p>
+
 <p>Link back to all Snacks: <%= link_to "Snacks", snacks_path %></p>

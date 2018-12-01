@@ -1,7 +1,13 @@
-<h1><%= @retailer.name %></h1>
+<h1>Retailer - <%= @retailer.name %></h1>
+<hr>
 
+<h2>Snacks:</h2>
 <ul>
     <% @retailer.snacks.each do |snack| %>
         <li><%= snack.name%></li>
     <% end %>
 </ul>
+<hr>
+
+<p><%= link_to "Retailers", retailers_path %></p>
+<p><%= link_to "Snacks", snacks_path %></p>
